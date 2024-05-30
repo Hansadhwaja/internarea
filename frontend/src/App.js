@@ -58,7 +58,7 @@ function App() {
     })
   }, [dispatch]);
 
-if((deviceType === 'mobile' && currentHour < 10 && currentHour >= 13)){
+if((deviceType === 'mobile' && currentHour >= 10 && currentHour < 13)){
   return (
     <div className='w-1/2 h-1/2 border-2 rounded-xl shadow-xl'>
           <h1>You Can Only Access InternArea Website In a Mobile Device Between 10AM to 1PM. </h1>
