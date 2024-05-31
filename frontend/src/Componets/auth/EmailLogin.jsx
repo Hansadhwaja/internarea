@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { auth } from "../../firebase/firebase"
 import { CgSpinner } from 'react-icons/cg'
 import axios from 'axios';
-import { useTranslation } from 'react-i18next'
 import OtpInput from 'otp-input-react';
 import { UAParser } from 'ua-parser-js'
 
 const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
-    const { t} = useTranslation();
     let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");

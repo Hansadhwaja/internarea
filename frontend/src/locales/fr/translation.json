@@ -165,5 +165,11 @@
     "Whocanapply": "Qui peut postuler*",
     "Send code via Email":"Envoyer le code par e-mail",
   "Verify your Email":"Vérifiez votre e-mail",
-  "Enter your Email":"Entrer votre Email"
+  "Enter your Email":"Entrer votre Email",
+  "history":"Histoire",
+  "Login History":"Historique de connexion",
+  "IP Address":"Adresse IP",
+  "Browser":"Navigateur",
+  "Operating System":"Système opérateur",
+  "Loggedin At":"Connecté à"
 }

@@ -165,6 +165,12 @@
     "Whocanapply": "Quem pode se inscrever*",
     "Send code via Email":"Enviar código por e-mail",
   "Verify your Email":"Verifique seu e-mail",
-  "Enter your Email":"Digite seu e-mail"
+  "Enter your Email":"Digite seu e-mail",
+  "history":"História",
+  "Login History":"Histórico de login",
+  "IP Address":"Endereço de IP",
+  "Browser":"Navegador",
+  "Operating System":"Sistema operacional",
+  "Loggedin At":"Conectado em"
 
 }

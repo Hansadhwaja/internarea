@@ -165,5 +165,11 @@
   "View All Applications": "View All Applications",
   "Send code via Email":"Send code via Email",
   "Verify your Email":"Verify your Email",
-  "Enter your Email":"Enter your Email"
+  "Enter your Email":"Enter your Email",
+  "history":"History",
+  "Login History":"Login History",
+  "IP Address":"IP Address",
+  "Browser":"Browser",
+  "Operating System":"Operating System",
+  "Loggedin At":"Loggedin At"
 }

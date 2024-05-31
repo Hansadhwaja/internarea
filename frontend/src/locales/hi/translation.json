@@ -165,5 +165,11 @@
     "Whocanapply": "कौन आवेदन कर सकता है*",
     "Send code via Email":"ईमेल के माध्यम से कोड भेजें",
   "Verify your Email":"अपना ईमेल सत्यापित करें",
-  "Enter your Email":"अपना ईमेल दर्ज करें"
+  "Enter your Email":"अपना ईमेल दर्ज करें",
+  "history":"इतिहास",
+  "Login History":"लॉगिन इतिहास",
+  "IP Address":"आईपी पता",
+  "Browser":"ब्राउज़र",
+  "Operating System":"ऑपरेटिंग सिस्टम",
+  "Loggedin At":"लॉग इन करें"
 }
