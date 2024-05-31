@@ -38,6 +38,8 @@ function App() {
 
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
+  console.log(deviceType, currentHour);
+
 
 
   useEffect(() => {
@@ -58,37 +60,40 @@ function App() {
     })
   }, [dispatch]);
 
-if((deviceType === 'mobile' && currentHour < 10 && currentHour >= 13)){
-  return (
-    <div className='w-1/2 h-1/2 border-2 rounded-xl shadow-xl'>
-          <h1>You Can Only Access InternArea Website In a Mobile Device Between 10AM to 1PM. </h1>
-        </div>
-  )
-}
+  if ((deviceType === 'mobile' && (currentHour < 10 || currentHour >= 13))) {
+    return (
+      <div className='w-3/4 h-screen  m-auto flex justify-center'>
+      <div className='my-auto border-2 rounded-xl shadow-xl p-2'>
+      <h1 className='font-semibold text-xl'>You Can Only Access InternArea Website In a Mobile Device Between 10AM to 1PM. </h1>
+      </div>
+ 
+      </div>
+    )
+  }
 
   return (
-        <div className={`${i18n.language === 'hi' && " bg-blue-200"} ${i18n.language === 'zh' && " bg-green-200"} ${i18n.language === 'fr' && " bg-yellow-200"}`}>
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/internship' element={<Intern />} />
-            <Route path='/Jobs' element={<JobAvl />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/detailjob' element={<JobDetail />} />
-            <Route path='/detailInternship' element={<InternDeatil />} />
-            <Route path='/detailApplication' element={<DeatilApplication />} />
-            <Route path='/adminLogin' element={<AdminLogin />} />
-            <Route path='/adminepanel' element={<Adminpanel />} />
-            <Route path='/postInternship' element={<Postinternships />} />
-            <Route path='/postJob' element={<PostJob />} />
-            <Route path='/applications' element={<ViewAllApplication />} />
-            <Route path='/UserapplicationDetail' element={< UserapplicationDetail />} />
-            <Route path='/userapplication' element={<UserApplication />} />
-            <Route path='/history' element={<History />} />
-          </Routes>
-          <Footer />
-        </div>
+    <div className={`${i18n.language === 'hi' && " bg-blue-200"} ${i18n.language === 'zh' && " bg-green-200"} ${i18n.language === 'fr' && " bg-yellow-200"}`}>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/internship' element={<Intern />} />
+        <Route path='/Jobs' element={<JobAvl />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/detailjob' element={<JobDetail />} />
+        <Route path='/detailInternship' element={<InternDeatil />} />
+        <Route path='/detailApplication' element={<DeatilApplication />} />
+        <Route path='/adminLogin' element={<AdminLogin />} />
+        <Route path='/adminepanel' element={<Adminpanel />} />
+        <Route path='/postInternship' element={<Postinternships />} />
+        <Route path='/postJob' element={<PostJob />} />
+        <Route path='/applications' element={<ViewAllApplication />} />
+        <Route path='/UserapplicationDetail' element={< UserapplicationDetail />} />
+        <Route path='/userapplication' element={<UserApplication />} />
+        <Route path='/history' element={<History />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

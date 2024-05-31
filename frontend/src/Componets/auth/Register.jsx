@@ -21,6 +21,7 @@ const Register = () => {
   const browser = result.browser.name;
   const os = result.os.name;
   const deviceType = result.device.type || "Desktop";
+  console.log(`Browser:${browser}`);
 
 
 

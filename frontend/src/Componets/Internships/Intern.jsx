@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 function Intern() {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
 
   const [serachCategory, setSearchCategory] = useState("");
   const [searchLoaction, setSearchLocation] = useState("")
@@ -15,12 +15,7 @@ function Intern() {
 
   const [InternData, setInternData] = useState([])
 
-  const showDiv = () => {
-    setDivVisible(true)
-  }
-  const hidediv = () => {
-    setDivVisible(false)
-  }
+
 
 
   useEffect(() => {
@@ -28,7 +23,6 @@ function Intern() {
       try {
         const response = await axios.get(`https://internshipbackend-vwja.onrender.com/api/internship`)
         setInternData(response.data)
-        console.log(response.data)
       } catch (error) {
         console.log(error)
       }
@@ -74,9 +68,9 @@ function Intern() {
           <p className=' text-center ' ><i className="bi bi-funnel  text-blue-400"></i> {t(" Filter")}</p>
           <div className='fill flex flex-col ml-2 gap-2'>
             <label htmlFor="pro">{t("Profile")}</label>
-            <input type="text" id='pro' value={serachCategory} onChange={handleCategoryChange} className='border-2 p-2 rounded-lg w-full' placeholder={t("Profile manager")} />
+            <input type="text" id='pro' value={serachCategory} onChange={handleCategoryChange} className='border-2 p-2 rounded-lg w-full bg-inherit border-slate-400' placeholder={t("Profile manager")} />
             <label htmlFor="loc">{t("Location")}</label>
-            <input type="text" id='loc' value={searchLoaction} onChange={handleCategoryLocationChange} className='border-2 p-2 rounded-lg w-full' placeholder={t("Mumbai")} />
+            <input type="text" id='loc' value={searchLoaction} onChange={handleCategoryLocationChange} className='border-2 p-2 rounded-lg w-full bg-inherit border-slate-400' placeholder={t("Mumbai")} />
           </div>
           <div className=" preferences mt-8 flex flex-col">
             <div className="flex mt-3 ml-3 mr-3">
@@ -97,7 +91,7 @@ function Intern() {
         </div>
         <div className="mt-12 shadow-lg rounded-xl p-5 w-fit">
           <div className="flex gap-3 my-auto">
-            <input type="text" placeholder={t("inputText")} className='p-2 rounded-lg my-auto border-2' />
+            <input type="text" placeholder={t("inputText")} className='p-2 rounded-lg my-auto border-2 bg-inherit border-slate-400' />
             <i className="bi bi-search my-auto"></i>
           </div>
         </div>
@@ -109,7 +103,7 @@ function Intern() {
 
         {filterInternship.map((data, index) => (
 
-          <div className='shadow-lg rounded-lg border-2 border-slate-400 m-7  p-2'>
+          <div className='shadow-lg rounded-lg border-2 border-slate-400 m-7  p-2' key={index}>
             <div className="m-4">
 
               <div className="flex justify-between">

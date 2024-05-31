@@ -75,7 +75,10 @@ function Navbar() {
     const logoutFunction = () => {
         signOut(auth)
         navigate("/")
-        setDivVisibleProfile(prev => !prev)
+        if(isDivVisibleForProfile){
+            setDivVisibleProfile(prev => !prev)
+        }
+       
     }
 
     const handleSidebar = () => {
@@ -91,25 +94,25 @@ function Navbar() {
                             &#9776;
                         </span>
                     </div>
-                    <div className='w-14 my-auto md:w-32'>
+                    <div className='w-14 my-auto sm:w-24 md:w-32'>
                         <Link to={"/"}>
                             <img src={logo} alt="" srcset="" />
                         </Link>
                     </div>
-                    <div className="flex gap-4 w-fit">
-                        <div className='md:flex gap-2 items-center my-auto hidden'>
+                    <div className="flex gap-1 md:gap-4 w-fit">
+                        <div className='sm:flex gap-2 items-center my-auto hidden text-[12px] md:text-md'>
                             <Link to={"/Internship"}>
                                 <p id='int' className='flex gap-3' >{t('cardType')}</p>
                             </Link>
                             <i onClick={handleInternShips} id='ico' className="bi bi-caret-down-fill"></i>
                         </div>
-                        <div className='hidden md:flex gap-2 items-center my-auto'>
+                        <div className='hidden sm:flex gap-2 items-center my-auto text-[12px] md:text-md'>
                             <Link to={"/Jobs"}>
                                 <p className='flex gap-3'>{t('cardType2')}</p>
                             </Link>
                             <i className="bi bi-caret-down-fill" id='ico2' onClick={handleJobs}></i>
                         </div>
-                        <div className='flex items-center my-auto w-fit text-[10px]'>
+                        <div className='flex items-center my-auto w-fit text-[10px] md:text-lg'>
                             <select className='flex bg-inherit p-1 md:p-2 border-2 border-slate-400 rounded-md' onChange={(e) => changeLanguage(e.target.value)}>
                                 <option value='en'>English</option>
                                 <option value='es'>Español</option>
@@ -146,7 +149,7 @@ function Navbar() {
                                 {/* <button className='border-2 border-sky-500 rounded-lg p-3 text-sky-500'><Link to="/login">Login</Link></button> */}
 
 
-                                <button className='bg-sky-500 rounded-lg p-1.5 md:p-3 text-[12px] text-white my-auto'><Link to="/register">{t('registerButton')}</Link></button>
+                                <button className='bg-sky-500 rounded-lg p-1 md:p-3 text-[12px] text-white my-auto'><Link to="/register">{t('registerButton')}</Link></button>
                             </div>
 
                         )
@@ -155,13 +158,13 @@ function Navbar() {
                     }
                     {
                         user ? (
-                            <div className='p-2 md:flex hidden'>
-                                <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 my-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
+                            <div className='p-2 sm:flex hidden'>
+                                <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 m-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
                             </div>
                         ) : (
                             <div className='md:flex hidden text-[12px] my-auto text-center gap-2'>
-                                <div className="">
-                                    <p className='border-2 border-slate-400 flex text-blue-700 p-2 rounded-lg my-auto'>  {t('Hire Talent')}</p>
+                                <div className="flex border-sky-500 border-2 rounded-lg p-1 text-[12px] text-sky-500 m-auto">
+                                    <button className=''><Link to="/">{t('Hire Talent')}</Link></button>
                                 </div>
 
                                 <div className='bg-sky-500 rounded-lg my-auto p-2 text-white'>
@@ -179,7 +182,7 @@ function Navbar() {
 
             {
                 isDivVisibleForintern && (
-                    <div className="p-3 w-[400px] absolute z-10 bg-white flex gap-3 border-2 border-slate-200 rounded-lg top-20 left-5 h-[60%]">
+                    <div className={`p-3 w-[400px] absolute z-10 ${i18n.language === 'en' || i18n.language === 'es' || i18n.language === 'pt' ? 'bg-white' : 'bg-inherit'} flex gap-3 border-2 border-slate-200 rounded-lg top-20 left-5 h-[60%]`}>
                         <div className=" p-2">
 
                             <p>{t('Top Locations')}</p>
@@ -204,7 +207,7 @@ function Navbar() {
             }
             {
                 isDivVisibleForJob && (
-                    <div className="p-3 w-[400px] absolute z-10 bg-white flex gap-3 border-2 border-slate-200 rounded-lg top-20 left-64 h-[60%]">
+                    <div className={`p-3 w-[400px] absolute z-10 ${i18n.language === 'en' || i18n.language === 'es' || i18n.language === 'pt' ? 'bg-white' : 'bg-inherit'} flex gap-3 border-2 border-slate-200 rounded-lg top-20 left-64 h-[60%]`}>
                         <div className=" p-2">
                             <p>{t('Top Locations')}</p>
                             <p>{t("Profile")}</p>
@@ -228,7 +231,7 @@ function Navbar() {
             }
 
             {isDivVisibleForProfile && (
-                <div className={`${i18n.language === 'en'||i18n.language === 'es'|| i18n.language === 'pt' ?'bg-white':'bg-inherit' }absolute bg-inherit top-20 right-10 md:right-20 z-10 border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit`}>
+                <div className={`${i18n.language === 'en' || i18n.language === 'es' || i18n.language === 'pt' ? 'bg-white' : 'bg-inherit'} absolute top-20 md:top-32 right-10 md:right-20 z-10 border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit max-w-sm`}>
                     <Link to={'/profile'} className='border-b-2 pb-3' onClick={() => setDivVisibleProfile(prev => !prev)}>
                         <img src={user?.photo || profileImage} alt="" className='w-16 h-16 rounded-full mx-auto p-2' />
                     </Link>
@@ -237,8 +240,8 @@ function Navbar() {
                     <p className='text-left'>{t('email')}:{user?.email}</p>
                     <p className='text-left'>{t('phone')}:{user?.phoneNumber}</p>
                     <div className='flex gap-2'>
-                        <Link to={'/history'} className='m-auto' onClick={() => setDivVisibleProfile(prev => !prev)}>
-                            <button className='p-2 border-2 bg-blue-500 text-white rounded-lg'>Login History</button>
+                        <Link to={'/history'} className='my-auto' onClick={() => setDivVisibleProfile(prev => !prev)}>
+                            <button className='p-2 border-2 bg-blue-500 text-white rounded-lg text-sm'>Login History</button>
                         </Link>
                         <div className='p-2 flex '>
                             <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 my-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>

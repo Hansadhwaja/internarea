@@ -5,13 +5,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 function JobAvl() {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
 
   const [serachCategory, setSearchCategory] = useState("");
   const [searchLoaction, setSearchLocation] = useState("")
   const [jobData, setJobData] = useState([])
   const [filterJob, setFilterJob] = useState([])
-  const [isDivVisible, setDivVisible] = useState(false)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,12 +22,7 @@ function JobAvl() {
     }
     fetchData();
   }, [])
-  const showDiv = () => {
-    setDivVisible(true)
-  }
-  const hidediv = () => {
-    setDivVisible(false)
-  }
+
 
   const handleCategoryChange = (e) => {
     const categeoryValue = e.target.value;
@@ -61,7 +55,7 @@ function JobAvl() {
       <div className='flex flex-col sm:flex-row w-full'>
         <div className="w-full mb-14 flex flex-col items-center">
           <div className=" w-fit p-4 mt-3 rounded-lg shadow-lg">
-            <p className=' text-center' ><i onClick={showDiv} className="bi bi-funnel  text-blue-400"></i>{t(' Filter')}</p>
+            <p className=' text-center' ><i  className="bi bi-funnel  text-blue-400"></i>{t(' Filter')}</p>
             <div className='fill flex flex-col ml-2 gap-2'>
               <label htmlFor="pro">{t('Profile')}</label>
               <input type="text" id='pro' value={serachCategory} onChange={handleCategoryChange} className='border-2 p-2 rounded-lg w-full' placeholder={t('Profile manager')} />
@@ -99,7 +93,7 @@ function JobAvl() {
 
           {filterJob.map((data, index) => (
 
-            <div className='shadow-lg rounded-lg m-7 border-2 border-slate-400'>
+            <div className='shadow-lg rounded-lg m-7 border-2 border-slate-400' key={index}>
               <div className="m-4">
 
               <div className="flex justify-between">
