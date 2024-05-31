@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../../Feature/Userslice'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import profileImage from '../../Assets/org.png'
 
 const History = () => {
   const user = useSelector(selectUser);
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/api/history', {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
 
     })
       .then((response) => {
@@ -24,7 +25,7 @@ const History = () => {
         <h1 className='text-4xl font-bold text-center'>Login History</h1>
       </div>
       <Link to={'/profile'} className='w-12'>
-        <img src={user?.photo} alt='' className='rounded-full' />
+        <img src={user?.photo || profileImage} alt='' className='rounded-full' />
       </Link>
       <div>
         {data.map((item,index) => (user.uid === item.uid) ? (

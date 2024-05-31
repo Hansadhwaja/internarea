@@ -18,6 +18,7 @@ function DeatilApplication() {
     }
     fetchData()
   }, [id])
+  
   const handleAcceptAndReject = async (id, action) => {
     try {
       const response = await axios.put(`https://internshipbackend-vwja.onrender.com/api/application/${id}`, { action })

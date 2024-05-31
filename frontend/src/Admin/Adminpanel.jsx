@@ -4,7 +4,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import { BsMailbox2Flag } from "react-icons/bs";
 import { useTranslation } from 'react-i18next';
 function Adminpanel() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
       <div class="hidden w-full overflow-hidden rounded-lg border bg-gray-50 shadow-sm lg:block">
         <div class="mx-auto flex max-w-screen-lg items-center gap-8 p-8">

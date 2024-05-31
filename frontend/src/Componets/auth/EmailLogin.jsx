@@ -9,7 +9,7 @@ import OtpInput from 'otp-input-react';
 import { UAParser } from 'ua-parser-js'
 
 const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
-    const { t, i18n } = useTranslation();
+    const { t} = useTranslation();
     let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
@@ -21,7 +21,8 @@ const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
     const onSigninWithEmail = async () => {
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:5000/api/email/send-otp', { email });
+            console.log(process.env.REACT_APP_API_URL);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/email/send-otp`, { email });
             if (response.data.message === 'OTP sent successfully') {
                 setEmailSent(true);
                 setLoading(false)
@@ -35,9 +36,9 @@ const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
     const onOTPVerify = async () => {
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5000/api/email/verify-otp', { email, otp });
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/email/verify-otp`, { email, otp });
             setMessage(response.data.message);
-            const result = await axios.post('http://localhost:5000/login', { email });
+            const result = await axios.post(`${process.env.REACT_APP_API_URL}/login`, { email });
             const token = result.data.customToken;
             await signInWithCustomToken(auth, token)
                 .then((userCredential) => {
@@ -48,12 +49,12 @@ const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
                     const parser = new UAParser();
                     const result = parser.getResult();
                 
-                    const browser = result.browser.name; // Specific browser name like Chrome, Edge, etc.
-                    const os = result.os.name; // OS name like Windows, Mac OS, etc.
+                    const browser = result.browser.name;
+                    const os = result.os.name;
                     const deviceType = result.device.type || "Desktop";
                 
                 
-                    axios.post('http://localhost:5000/api/history', {
+                    axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
                       browser: browser,
                       os: os,
                       deviceType: deviceType,

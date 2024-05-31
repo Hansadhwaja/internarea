@@ -52,9 +52,6 @@ const PhoneLogin = ({code,Phone ,verify,OTPText}) => {
             .catch((error) => {
                 console.log(error);
                 setLoading(false);
-                // appVerifier.render().then(function(widgetId) {
-                //     grecaptcha.reset(widgetId);
-                //   });
             });
     }
 
@@ -64,8 +61,6 @@ const PhoneLogin = ({code,Phone ,verify,OTPText}) => {
             .confirm(otp)
             .then(async (res) => {
                 const user = res.user;
-                // let credential = auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, otp);
-                // auth().signInWithCredential(credential);
                 console.log(user);
                 if (res.user) {
                     const user = res.user;
@@ -75,12 +70,12 @@ const PhoneLogin = ({code,Phone ,verify,OTPText}) => {
                     const parser = new UAParser();
                     const result = parser.getResult();
                 
-                    const browser = result.browser.name; // Specific browser name like Chrome, Edge, etc.
-                    const os = result.os.name; // OS name like Windows, Mac OS, etc.
+                    const browser = result.browser.name;
+                    const os = result.os.name;
                     const deviceType = result.device.type || "Desktop";
                 
                 
-                    axios.post('http://localhost:5000/api/history', {
+                    axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
                       browser: browser,
                       os: os,
                       deviceType: deviceType,

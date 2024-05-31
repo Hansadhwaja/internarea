@@ -9,12 +9,9 @@ import { useTranslation } from 'react-i18next'
 import EmailLogin from './EmailLogin'
 import axios from 'axios'
 import UAParser from 'ua-parser-js';
-import { useSelector } from 'react-redux'
-import { selectUser } from '../../Feature/Userslice'
 import MSUser from './MSUser'
 
 const Register = () => {
-  const user = useSelector(selectUser)
   const parser = new UAParser();
   const result = parser.getResult();
 
@@ -34,7 +31,7 @@ const Register = () => {
       const uid = user.uid
       navigate("/")
 
-      axios.post('http://localhost:5000/api/history', {
+      axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
         browser: browser,
         os: os,
         deviceType: deviceType,

@@ -6,8 +6,7 @@ const path = require("path")
 const cors = require("cors");
 const { connect } = require("./db")
 const router = require("./Routes/index")
-const port = 5000
-const secretKey = process.env.SECRET_KEY;
+const port = process.env.PORT
 const admin = require('./firebaseAdmin');
 
 app.use(cors())

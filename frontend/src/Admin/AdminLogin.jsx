@@ -5,7 +5,7 @@ import "./admin.css"
 import { useTranslation } from 'react-i18next';
 
 function AdminLogin() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [username, setusername] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
@@ -21,7 +21,6 @@ function AdminLogin() {
         password: password
       }
       axios.post("https://internshipbackend-vwja.onrender.com/api/admin/adminLogin", bodyjson).then((res) => {
-        console.log(res, "data is send")
         alert("success")
         navigate("/adminepanel")
       }).catch((err) => {

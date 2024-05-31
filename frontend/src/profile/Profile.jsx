@@ -6,7 +6,7 @@ import profileImage from '../Assets/org.jpg'
 import { useTranslation } from 'react-i18next'
 
 function Profile() {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   const user = useSelector(selectUser)
   return (
     <div>

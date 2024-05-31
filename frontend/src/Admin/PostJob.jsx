@@ -58,7 +58,7 @@ function PostJob() {
     console.log(err))
     
   }
-  alert(" Internship Posted is Successfully")
+  alert(" Job Posted is Successfully")
   navigate("/adminepanel")
     }
   return (
