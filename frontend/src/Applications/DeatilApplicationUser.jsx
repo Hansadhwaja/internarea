@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
+import profileImage from '../Assets/org.jpg'
 
 
 function DeatilApplication() {
@@ -27,7 +28,7 @@ function DeatilApplication() {
           <section class="text-gray-600  overflow-hidden">
             <div class="container px-5 py-24 mx-auto">
               <div class="lg:w-4/5 mx-auto flex gap-10">
-                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover rounded-xl" src={data.user?.photo} />
+                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover rounded-xl" src={data.user?.photo || profileImage} />
                 <div class="lg:w-1/2 w-full flex flex-col gap-2">
                   <div>
                     <h2 class="text-sm text-gray-500">{t('Company')}</h2>
