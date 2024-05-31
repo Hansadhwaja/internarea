@@ -22,7 +22,7 @@ const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
         setLoading(true);
         try {
             console.log(process.env.REACT_APP_API_URL);
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/email/send-otp`, { email });
+            const response = await axios.post(`https://internarea.onrender.com/api/email/send-otp`, { email });
             if (response.data.message === 'OTP sent successfully') {
                 setEmailSent(true);
                 setLoading(false)
@@ -36,9 +36,9 @@ const EmailLogin = ({ code, Email, verify, OTPText, emailText}) => {
     const onOTPVerify = async () => {
         try {
             setLoading(true);
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/email/verify-otp`, { email, otp });
+            const response = await axios.post(`https://internarea.onrender.com/api/email/verify-otp`, { email, otp });
             setMessage(response.data.message);
-            const result = await axios.post(`${process.env.REACT_APP_API_URL}/login`, { email });
+            const result = await axios.post(`https://internarea.onrender.com/login`, { email });
             const token = result.data.customToken;
             await signInWithCustomToken(auth, token)
                 .then((userCredential) => {
