@@ -58,9 +58,9 @@ function JobAvl() {
             <p className=' text-center' ><i  className="bi bi-funnel  text-blue-400"></i>{t(' Filter')}</p>
             <div className='fill flex flex-col ml-2 gap-2'>
               <label htmlFor="pro">{t('Profile')}</label>
-              <input type="text" id='pro' value={serachCategory} onChange={handleCategoryChange} className='border-2 p-2 rounded-lg w-full' placeholder={t('Profile manager')} />
+              <input type="text" id='pro' value={serachCategory} onChange={handleCategoryChange} className='border-2 p-2 rounded-lg w-full bg-inherit' placeholder={t('Profile manager')} />
               <label htmlFor="loc">{t('Location')}</label>
-              <input type="text" id='loc' value={searchLoaction} onChange={handleCategoryLocationChange} className='border-2 p-2 rounded-lg w-full' placeholder={t('Mumbai') }/>
+              <input type="text" id='loc' value={searchLoaction} onChange={handleCategoryLocationChange} className='border-2 p-2 rounded-lg w-full bg-inherit' placeholder={t('Mumbai') }/>
             </div>
             <div className=" preferences mt-8 flex flex-col">
               <div className="flex mt-3 ml-3 mr-3">
@@ -81,7 +81,7 @@ function JobAvl() {
           </div>
           <div className="mt-12 shadow-lg rounded-xl p-5 w-fit">
             <div className="flex gap-3 my-auto">
-              <input type="text" placeholder={t("inputText")} className='p-2 rounded-lg my-auto border-2' />
+              <input type="text" placeholder={t("inputText")} className='p-2 rounded-lg my-auto border-2 bg-inherit' />
               <i className="bi bi-search my-auto"></i>
             </div>
           </div>
