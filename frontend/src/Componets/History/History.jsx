@@ -9,7 +9,7 @@ const History = () => {
   const user = useSelector(selectUser);
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
+    axios.get(`https://internarea.onrender.com/api/history`, {
 
     })
       .then((response) => {

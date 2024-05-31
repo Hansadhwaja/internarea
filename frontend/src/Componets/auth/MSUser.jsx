@@ -18,7 +18,7 @@ const MSUser = () => {
         async function msUserLogin() {
 
 
-            const result = await axios.post(`${process.env.REACT_APP_API_URL}/login-msuser`);
+            const result = await axios.post(`https://internarea.onrender.com/login-msuser`);
             const token = result.data.customToken;
             await signInWithCustomToken(auth, token)
                 .then((userCredential) => {
@@ -26,7 +26,7 @@ const MSUser = () => {
                     const uid = user.uid
                     navigate('/')
 
-                    axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
+                    axios.post(`https://internarea.onrender.com/api/history`, {
                         browser: browser,
                         os: os,
                         deviceType: deviceType,

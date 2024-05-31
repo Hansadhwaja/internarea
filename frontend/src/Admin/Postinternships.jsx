@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 function Postinternships() {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   const [title, setTitle] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [location, setLocation] = useState('');

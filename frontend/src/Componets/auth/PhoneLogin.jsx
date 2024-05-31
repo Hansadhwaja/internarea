@@ -75,7 +75,7 @@ const PhoneLogin = ({code,Phone ,verify,OTPText}) => {
                     const deviceType = result.device.type || "Desktop";
                 
                 
-                    axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
+                    axios.post(`https://internarea.onrender.com/api/history`, {
                       browser: browser,
                       os: os,
                       deviceType: deviceType,

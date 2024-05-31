@@ -31,7 +31,7 @@ const Register = () => {
       const uid = user.uid
       navigate("/")
 
-      axios.post(`${process.env.REACT_APP_API_URL}/api/history`, {
+      axios.post(`https://internarea.onrender.com/api/history`, {
         browser: browser,
         os: os,
         deviceType: deviceType,
