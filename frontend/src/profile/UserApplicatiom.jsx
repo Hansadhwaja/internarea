@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 
 
 
-function UserApplicatiom() {
-  const { t, i18n } = useTranslation();
+function UserApplication() {
+  const { t} = useTranslation();
   const [application, setApplication] = useState([])
   const user = useSelector(selectUser)
   const userapplication = application.filter(app => app.user?.name === user.name)
@@ -32,9 +32,9 @@ function UserApplicatiom() {
 
   return (
     <div>
-      <div className='hide'>
+      <div className='hidden md:flex flex-col'>
 
-        <h1 className='text-3xl font-semibold mt-3'>{t('Total Applications')}</h1>
+        <h1 className='text-3xl font-semibold mt-3 text-center'>{t('Total Applications')}</h1>
         <div className="flex justify-center " id='tabel'>
           <div className="applications flex flex-col mt-7">
             <div className="overflow-x-auto sm:-mx-6 lg:mx-8">
@@ -77,26 +77,27 @@ function UserApplicatiom() {
         </div>
 
       </div>
+      
 
-      <div className='show'>
-        <h1>{t('View All Applications')}</h1>
+      <div className='mt-5 md:hidden'>
+        <h1 className='m-3 font-semibold  text-xl text-center'>{t('View All Applications')}</h1>
         {userapplication.map((data) => (
-          <section class="text-gray-600 body-font">
+          <section class="text-gray-600">
             <div class="container px-5 py-2 mx-auto flex flex-wrap">
               <div class="flex flex-wrap -m-4">
                 <div class="p-4 lg:w-1/2 md:w-full">
-                  <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+                  <div class="flex border-2 rounded-lg border-gray-400 border-opacity-50 p-8 sm:flex-row flex-col">
                     <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
                         <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                       </svg>
                     </div>
                     <div class="flex-grow">
-                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3"> {t('Company')}<span className='text-blue-500'>{data.company}</span></h2>
+                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3"> {t('Company')}<span className='text-blue-500 ml-2'>{data.company}</span></h2>
                       <p class="leading-relaxed text-base"> {t('Applied By')} {data.user.name}</p>
                       <p class="leading-relaxed text-base"> {t('Applied On')}{new Date(data?.createAt).toLocaleDateString()}</p>
                       <p class="leading-relaxed text-base">{t('Application Status')} {data.status}</p>
-                      <Link to={`/detailApplication?a=${data._id}`} class="mt-3 text-indigo-500 inline-flex items-center">{t('viewButton"')}
+                      <Link to={`/detailApplication?a=${data._id}`} class="mt-3 text-indigo-500 inline-flex items-center">{t('viewButton')}
                         <i class="bi bi-chevron-compact-right text-blue-500" ></i>
                       </Link>
                     </div>
@@ -116,4 +117,4 @@ function UserApplicatiom() {
   )
 }
 
-export default UserApplicatiom
+export default UserApplication

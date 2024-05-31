@@ -29,30 +29,30 @@ function DeatilApplication() {
     }
 
   }
- 
+
 
   return (
     <div>
       {
         data.map((data) => (
-          <section class="text-gray-600 body-font overflow-hidden">
-          <div class="container px-5 py-24 mx-auto">
-              <div class="lg:w-4/5 mx-auto flex gap-10">
-                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover rounded-xl" src={data.user?.photo} />
-                <div class="lg:w-1/2 w-full flex flex-col gap-2">
+          <section className="text-gray-600 body-font overflow-hidden">
+            <div className="container px-5 py-24 mx-auto">
+              <div className="lg:w-4/5 mx-auto flex flex-col md:flex-row gap-5 md:gap-10">
+                <img alt="ecommerce" className="w-32 md:w-64 flex object-cover rounded-xl" src={data.user?.photo} />
+                <div className="lg:w-1/2 w-full flex flex-col gap-2">
                   <div>
-                    <h2 class="text-sm text-gray-500">{t('Company')}</h2>
-                    <p class="text-gray-900 font-bold ">{data.company}</p>
+                    <h2 className="text-sm text-gray-500">{t('Company')}</h2>
+                    <p className="text-gray-900 font-bold ">{data.company}</p>
                   </div>
                   <div>
                     <h2>{t('Cover Letter')}</h2>
-                    <p class="font-bold">{data.coverLetter}</p>
+                    <p className="font-bold">{data.coverLetter}</p>
                   </div>
 
 
-                  <div class="flex mt-6  pb-5 border-b-2 border-gray-100 mb-5">
+                  <div className="flex mt-6  pb-5 border-b-2 border-gray-100 mb-5">
 
-                    <span class="mr-3">{t('Application Date')}</span><br />
+                    <span className="mr-3">{t('Application Date')}</span><br />
                     <p className='font-bold'>{new Date(data?.createAt).toLocaleDateString()}</p>
 
                   </div>

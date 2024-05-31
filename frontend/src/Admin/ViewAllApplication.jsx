@@ -28,7 +28,7 @@ function ViewAllApplication() {
 
 
   return (
-    <div>
+    <div className='mt-5'>
       <div className='hide'>
 
         <h1 className='text-3xl font-semibold mt-3'>{t('Total Applications')}</h1>
@@ -75,8 +75,8 @@ function ViewAllApplication() {
 
       </div>
 
-      <div className='show'>
-        <h1>{t('View All Applications')}</h1>
+      <div className=''>
+        <h1 className='p-2'>{t('View All Applications')}</h1>
         {application.map((data) => (
           <section class="text-gray-600 body-font">
             <div class="container px-5 py-2 mx-auto flex flex-wrap">

@@ -28,7 +28,7 @@ const History = () => {
       </Link>
       <div>
         {data.map((item,index) => (user.uid === item.uid) ? (
-          <div className='w-1/2 flex flex-col gap-3 rounded-xl border-2 p-2 shadow-xl mt-5' key={index}>
+          <div className='w-fit flex flex-col gap-3 rounded-xl border-2 p-2 shadow-xl mt-5' key={index}>
             <p>UID: {item.uid}</p>
             <p>IP Address: {item.IPAddress}</p>
             <p>Browser: {item.browser}</p>

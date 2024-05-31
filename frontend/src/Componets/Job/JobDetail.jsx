@@ -67,8 +67,7 @@ function JobDetail() {
 
   return (
     <div>
-      <div className="p-3">
-        <>
+      <div className="p-3">       
           <h1 className='font-bold text-3xl mt-3'>{data.title}</h1>
           <div className="p-5 shadow-sm rounded-xl border-2">
             <p className='m-2 border-2 border-slate-200 p-2 w-fit rounded-lg'> <i className='bi bi-arrow-up-right text-blue-500' ></i>{t('iCardTitle')}</p>
@@ -108,29 +107,21 @@ function JobDetail() {
 
             <p className='mt-3 text-xl font-bold text-start m-3'>{t("Perks")}</p>
             <p>{data.perks}</p>
-
             <p className='mt-3 text-xl font-bold text-start m-3'>{t("Additional information")}</p>
             <p>{data.AdditionalInfo}</p>
-
             <p className='mt-3 text-xl font-bold text-start m-3'> {t("Number of opening")}</p>
             <p className='text-start'>{data.numberOfopning}</p>
             <div className='flex m-2'>
               <button className='m-auto  bg-blue-500 text-center text-white font-bold w-fit py-2  px-3 rounded-lg' onClick={show}>{t("Apply")}</button>
-
             </div>
-
           </div>
-        </>
-
-
-
       </div>
       {isDivVisible && (
-        <>
-          <div className="w-fit m-2 rounded-lg p-6 border-2">
-            <div className="">
+        <div className='p-3'>
+          <div className="shadow-sm rounded-xl border-2 w-fit p-5">
+            <div>
               <button className='bg-sky-500 text-white p-2 rounded-lg' onClick={hide} ><i className='bi-bi-x'></i>{t("Close")}</button>
-              <p>{t("Applyion for")} {data.company}</p>
+              <p className='mt-3'>{t("Applyion for")} {data.company}</p>
               <p className='mt-3 text-sm font-bold text-start mb-3'>{data.aboutCompany}</p>
 
             </div>
@@ -141,7 +132,7 @@ function JobDetail() {
               <p className='mt-5 font-semibold text-xl'>{t("Cover letter")}</p>
               <br />
               <p>{t("coverText")}</p>
-              <textarea name="coverLetter" placeholder='' id="text" value={textarea} onChange={(e) => setTextare(e.target.value)} className='w-full'></textarea>
+              <textarea name="coverLetter" placeholder='' id="text" value={textarea} onChange={(e) => setTextare(e.target.value)} className='w-full bg-inherit shadow-xl'></textarea>
               <p className='mt-5 font-semibold text-xl'>{t("Your availiblity")}</p>
               <p>{t("Confirm your availiblity")}</p>
 
@@ -210,7 +201,7 @@ function JobDetail() {
               }
             </div>
           </div>
-        </>
+        </div>
       )
 
       }

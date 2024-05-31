@@ -8,6 +8,9 @@ import Job from './Job'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useTranslation } from "react-i18next";
+import { FcGoogle } from 'react-icons/fc'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../Feature/Userslice'
 
 
 
@@ -15,7 +18,7 @@ import { useTranslation } from "react-i18next";
 function Home() {
     const { t, i18n } = useTranslation();
 
-
+    const user = useSelector(selectUser)
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const [selectedCategory, setSelectedCategory] = useState("Big Brands")
@@ -77,13 +80,13 @@ function Home() {
                     <img className='slide_Img ml-4' src={fouth} alt="" />
                 </div>
             </div>
-            <div className="flex BUttons mt-5">
-                <button className='back' onClick={() => handleSlide('left')}> <i className='bi bi-chevron-left' id='sideBack'></i></button>
-                <button className="next" onClick={() => handleSlide('right')}> <i className='bi bi-chevron-right' id='slide'></i></button>
+            <div className="flex BUttons mt-5 bg-inherit">
+                <button className='back bg-inherit' onClick={() => handleSlide('left')}> <i className='bi bi-chevron-left' id='sideBack'></i></button>
+                <button className="next bg-inherit" onClick={() => handleSlide('right')}> <i className='bi bi-chevron-right' id='slide'></i></button>
             </div>
 
 
-            <div className={`${i18n.language === 'hi' ? " bg-blue-200" : ''}`}>
+            <div className='bg-inherit'>
                 <div className="info-intern">
                     <div className="mt-16">
                         <h1 className='text-center font-bold text-4xl'>{t("header2")}</h1>
@@ -139,20 +142,23 @@ function Home() {
                     <button className="next" onClick={() => handleSlideIntern('right')}> <i className='bi bi-chevron-right' id='slide'></i></button>
                 </div>
             </div>
-            <Job
-                popular1={t('popular1')}
-                list1={t('pList1')}
-                list2={t('pList2')}
-                list3={t('pList3')}
-                list4={t('pList4')}
-                list5={t('pList5')}
-                list6={t('pList6')}
-                list7={t('pList7')}
-                list8={t('pList8')}
-                iCardTitle={t("iCardTitle")}
-                cardType2={t("cardType2")}
-                viewButton={t("viewButton")}
-            />
+            <div className='bg-inherit'>
+                <Job
+                    popular1={t('popular1')}
+                    list1={t('pList1')}
+                    list2={t('pList2')}
+                    list3={t('pList3')}
+                    list4={t('pList4')}
+                    list5={t('pList5')}
+                    list6={t('pList6')}
+                    list7={t('pList7')}
+                    list8={t('pList8')}
+                    iCardTitle={t("iCardTitle")}
+                    cardType2={t("cardType2")}
+                    viewButton={t("viewButton")}
+                />
+            </div>
+
 
             <hr />
             <div className="mt-8 flex flex-wrap justify-center items-center text-center  gap-3 md:gap-10">
@@ -178,26 +184,22 @@ function Home() {
                 <div className="cont">
                     <p className="flex justify-center text-white  text-md sm:text-xl items-center w-fit font-semibold">{t("lowerText")}</p>
                 </div>
-                <div className="flex gap-3 sm:flex-col">
-                    <div className='max-w-sm w-fit' >
-                        <a href="/register" id='buttons' className='flex gap-2 p-2 bg-white rounded-xl px-5'>
-                            <div className='my-auto'>
-                                <svg className="h-6 w-6" viewBox="0 0 40 40">
-                                    <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
-                                    <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
-                                    <path d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z" fill="#4CAF50" />
-                                    <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
-                                </svg>
-                            </div>
-                            <p className='px-2'>{t("signInText")}</p>
-                        </a>
+                {!user && (
+                    <div className="flex gap-3 sm:flex-col">
+                    <div>
+                        <Link to="/register" className='flex gap-1 p-1 shadow-xl rounded-lg bg-white'>
+                            <FcGoogle className='h-10 w-10' />
+                            <p className="cursor-pointer my-auto w-5/6 text-center text-md text-gray-600 font-bold">{t('signInText')}</p>
+                        </Link>
                     </div>
                     <div>
-                        <a to="/register">
-                            <button className='bg-sky-500 w-full text-slate-200 p-2 rounded-lg'>{t("registerButton")}</button>
-                        </a>
+                        <Link to="/register">
+                            <button className='bg-sky-500 w-full text-slate-200 p-3 rounded-lg'>{t("registerButton")}</button>
+                        </Link>
                     </div>
                 </div>
+                )}
+               
             </div>
         </div>
     )

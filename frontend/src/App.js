@@ -18,17 +18,17 @@ import Adminpanel from './Admin/Adminpanel';
 import ViewAllApplication from "./Admin/ViewAllApplication"
 import Postinternships from './Admin/Postinternships';
 import DeatilApplication from './Applications/DeatilApplication';
-import UserApplicatiom from './profile/UserApplicatiom';
 import UserapplicationDetail from "./Applications/DeatilApplicationUser"
 import './i18n';
 import PostJob from './Admin/PostJob';
 import { useTranslation } from 'react-i18next';
 import History from './Componets/History/History';
 import { UAParser } from 'ua-parser-js';
+import UserApplication from './profile/UserApplicatiom';
 
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const parser = new UAParser();
@@ -66,7 +66,6 @@ if((deviceType === 'mobile' && currentHour < 10 && currentHour >= 13)){
   )
 }
 
-
   return (
         <div className={`${i18n.language === 'hi' && " bg-blue-200"} ${i18n.language === 'zh' && " bg-green-200"} ${i18n.language === 'fr' && " bg-yellow-200"}`}>
           <Navbar />
@@ -85,7 +84,7 @@ if((deviceType === 'mobile' && currentHour < 10 && currentHour >= 13)){
             <Route path='/postJob' element={<PostJob />} />
             <Route path='/applications' element={<ViewAllApplication />} />
             <Route path='/UserapplicationDetail' element={< UserapplicationDetail />} />
-            <Route path='/userapplication' element={<UserApplicatiom />} />
+            <Route path='/userapplication' element={<UserApplication />} />
             <Route path='/history' element={<History />} />
           </Routes>
           <Footer />

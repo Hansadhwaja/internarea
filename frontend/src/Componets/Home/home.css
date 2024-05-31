@@ -95,7 +95,6 @@
   
   .internships {
     margin-top: 45px;
-    background: #fafafa;
     white-space: nowrap;
     position: relative;
     overflow-x:hidden;
@@ -127,7 +126,7 @@
   }
   
   .jobs {
-    background: #fafafa;
+    
     white-space: nowrap;
     position: relative;
   
@@ -167,7 +166,6 @@
   @media screen and (max-width: 768px) {
     .internships {
       width: 90%;
-      background: #fafafa;
       white-space: nowrap;
       position: relative;
   

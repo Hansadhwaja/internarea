@@ -12,7 +12,7 @@ function Profile() {
     <div>
       <div className="flex items-center mt-9 mb-4 justify-center">
         <div className='max-w-xl'>
-          <div className='bg-white shadow-lg rounded-lg p-3'>
+          <div className='border-2 border-slate-400 shadow-lg rounded-lg p-3'>
             <div className="photo-wrapper p-2">
               <img src={user.photo || profileImage} alt="" className='w-32 h-32 rounded-full mx-auto' />
             </div>

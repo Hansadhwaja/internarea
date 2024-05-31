@@ -20,7 +20,8 @@ function Navbar() {
     const [isDivVisibleForintern, setDivVisibleForintern] = useState(false)
     const [isDivVisibleForJob, setDivVisibleForJob] = useState(false)
     const [isDivVisibleForProfile, setDivVisibleProfile] = useState(false)
-    const [isDivVisibleLang, setDivVisibleLang] = useState(false)
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
 
     const changeLanguage = (lng) => {
@@ -28,10 +29,8 @@ function Navbar() {
             navigate('/register')
         }
 
-
         i18n.changeLanguage(lng);
-        console.log(i18n.language);
-        setDivVisibleLang(prev => !prev)
+        console.log(i18n.language)
     };
 
     useEffect(() => {
@@ -75,90 +74,97 @@ function Navbar() {
 
     const logoutFunction = () => {
         signOut(auth)
-        
-        
         navigate("/")
+        setDivVisibleProfile(prev => !prev)
     }
 
+    const handleSidebar = () => {
+        setSidebarOpen(prev => !prev);
+    };
+
     return (
-        <div>
-            <nav className='hidden xl:flex  justify-between shadow-lg p-3 overflow-hidden'>
-                <div className='my-auto flex gap-3'>
-                    <div className='w-[100px]'>
-                        <Link to={"/"}><img src={logo} alt="" srcset="" /></Link>
+        <div className='bg-inherit'>
+            <nav className='flex gap-2  justify-around shadow-lg p-4 overflow-hidden bg-inherit'>
+                <div className='my-auto flex md:gap-3'>
+                    <div className="m-auto flex sm:hidden">
+                        <span className="cursor-pointer" onClick={handleSidebar}>
+                            &#9776;
+                        </span>
                     </div>
-                    <div className="flex gap-4">
-                        <div className='flex gap-2 items-center my-auto'>
+                    <div className='w-14 my-auto md:w-32'>
+                        <Link to={"/"}>
+                            <img src={logo} alt="" srcset="" />
+                        </Link>
+                    </div>
+                    <div className="flex gap-4 w-fit">
+                        <div className='md:flex gap-2 items-center my-auto hidden'>
                             <Link to={"/Internship"}>
                                 <p id='int' className='flex gap-3' >{t('cardType')}</p>
                             </Link>
                             <i onClick={handleInternShips} id='ico' className="bi bi-caret-down-fill"></i>
                         </div>
-                        <div className='flex gap-2 items-center my-auto'>
+                        <div className='hidden md:flex gap-2 items-center my-auto'>
                             <Link to={"/Jobs"}>
                                 <p className='flex gap-3'>{t('cardType2')}</p>
                             </Link>
                             <i className="bi bi-caret-down-fill" id='ico2' onClick={handleJobs}></i>
                         </div>
-                        <div className='flex gap-2 items-center my-auto'>
-                            <select className='flex gap-2 flex-col' onChange={(e) => changeLanguage(e.target.value)}>
-                                <option value='en' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'en' && 'bg-sky-500 text-white'}`}>English</option>
-                                <option value='es' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'es' && 'bg-sky-500 text-white'}`}>Español</option>
-                                <option value='pt' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'pt' && 'bg-sky-500 text-white'}`}>Português</option>
-                                <option value='hi' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'hi' && 'bg-sky-500 text-white'}`}>हिंदी</option>
-                                <option value='fr' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'fr' && 'bg-sky-500 text-white'}`}>Français</option>
-                                <option vvalue='zh' className={`p-2 border-2 m-2 rounded-lg ${i18n.language === 'zh' && 'bg-sky-500 text-white'}`}>中文</option>
+                        <div className='flex items-center my-auto w-fit text-[10px]'>
+                            <select className='flex bg-inherit p-1 md:p-2 border-2 border-slate-400 rounded-md' onChange={(e) => changeLanguage(e.target.value)}>
+                                <option value='en'>English</option>
+                                <option value='es'>Español</option>
+                                <option value='pt'>Português</option>
+                                <option value='hi'>हिंदी</option>
+                                <option value='fr'>Français</option>
+                                <option value='zh'>中文</option>
                             </select>
 
                         </div>
-
-
-
                     </div>
                 </div>
-                <div className='flex my-auto gap-3'>
-                    <div className="flex gap-3 my-auto flex-initial">
+                <div className='flex my-auto gap-2 md:gap-3'>
+                    <div className="flex gap-1 md:gap-3 my-auto flex-initial w-3/4 md:w-1/2 text-sm">
+                        <input type="text" placeholder={t('search')} className='p-0.5 md:p-2 rounded-md w-full border-2 border-slate-400 bg-inherit text-[11px]' />
                         <i className="bi bi-search my-auto"></i>
-                        <input type="text" placeholder={t('search')} className='p-2 rounded-md w-fit border-2' />
                     </div>
                     {
                         user ? (
-                            <>
-                                <div className='hidden sm:flex gap-2 p-2 m-auto border-2 rounded-xl'>
-                                    <Link to={"/profile"} className='w-6 lg:w-12'>
-                                        <img src={user?.photo || profileImage} alt="" className='rounded-full' id='' />
-                                    </Link>
-                                    <div className='my-auto'>
-                                        <i className='bi bi-caret-down-fill' id='ico4' onClick={handleProfile}></i>
-                                    </div>
 
+                            <div className='flex gap-2 p-2 m-auto border-2 rounded-xl'>
+                                <Link to={"/profile"} className='w-6 lg:w-12'>
+                                    <img src={user?.photo || profileImage} alt="" className='rounded-full' id='' />
+                                </Link>
+                                <div className='my-auto'>
+                                    <i className='bi bi-caret-down-fill' id='ico4' onClick={handleProfile}></i>
                                 </div>
-                            </>
+
+                            </div>
+
                         ) : (
-                            <>
-                                <div className="flex gap-2">
-                                    {/* <button className='border-2 border-sky-500 rounded-lg p-3 text-sky-500'><Link to="/login">Login</Link></button> */}
+
+                            <div className="flex">
+                                {/* <button className='border-2 border-sky-500 rounded-lg p-3 text-sky-500'><Link to="/login">Login</Link></button> */}
 
 
-                                    <button className='bg-sky-500 rounded-lg p-2 text-white'><Link to="/register">{t('registerButton')}</Link></button>
-                                </div>
-                            </>
+                                <button className='bg-sky-500 rounded-lg p-1.5 md:p-3 text-[12px] text-white my-auto'><Link to="/register">{t('registerButton')}</Link></button>
+                            </div>
+
                         )
 
 
                     }
                     {
                         user ? (
-                            <div className='p-4 flex '>
-                                <button className='bg-sky-500 rounded-lg text-white p-2 flex gap-2' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
+                            <div className='p-2 md:flex hidden'>
+                                <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 my-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
                             </div>
                         ) : (
-                            <div className='flex flex-1 flex-wrap'>
-                                <div className="flex my-auto border-2 text-blue-500 p-2 rounded-lg">
-                                    {t('Hire Talent')}
+                            <div className='md:flex hidden text-[12px] my-auto text-center gap-2'>
+                                <div className="">
+                                    <p className='border-2 border-slate-400 flex text-blue-700 p-2 rounded-lg my-auto'>  {t('Hire Talent')}</p>
                                 </div>
 
-                                <div className='bg-sky-500 rounded-lg p-3 text-white'>
+                                <div className='bg-sky-500 rounded-lg my-auto p-2 text-white'>
                                     <Link to={'/adminLogin'}>
                                         <button>{t('admin')}</button>
                                     </Link>
@@ -222,38 +228,48 @@ function Navbar() {
             }
 
             {isDivVisibleForProfile && (
-                <div className='profile-dropdown border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit'>
-                    <Link to={'/profile'} className='border-b-2 pb-3'>
+                <div className=' absolute bg-inherit top-20 right-10 md:right-20 z-10 border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit'>
+                    <Link to={'/profile'} className='border-b-2 pb-3' onClick={() => setDivVisibleProfile(prev => !prev)}>
                         <img src={user?.photo || profileImage} alt="" className='w-16 h-16 rounded-full mx-auto p-2' />
                     </Link>
                     <p className='text-left'>{t('name')}:{user?.name}</p>
                     <p className='text-left'>{t('uid')}:{user?.uid}</p>
                     <p className='text-left'>{t('email')}:{user?.email}</p>
                     <p className='text-left'>{t('phone')}:{user?.phoneNumber}</p>
-                    <Link to={'/history'} className='m-auto'>
-                        <button className='p-2 border-2 bg-blue-500 text-white rounded-lg'>Login History</button>
-                    </Link>
+                    <div className='flex gap-2'>
+                        <Link to={'/history'} className='m-auto' onClick={() => setDivVisibleProfile(prev => !prev)}>
+                            <button className='p-2 border-2 bg-blue-500 text-white rounded-lg'>Login History</button>
+                        </Link>
+                        <div className='p-2 flex '>
+                            <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 my-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
+                        </div>
+                    </div>
 
                 </div>
             )}
 
-            <Sidebar
-                InternShip={t('cardType')}
-                search={t('search')}
-                Job={t('cardType2')}
-                Name={t('name')}
-                talent={t('Hire Talent')}
-                admin={t('admin')}
-                register={t('registerButton')}
-                student={t('student')}
-                employer={t('employer')}
-                logout={t('logout')}
-                more={t('more')}
-                resume={t('resume')}
-                Applications={t('applications')}
-                Contact={t('contact')}
-                changeLanguage={changeLanguage}
-            />
+            {sidebarOpen && (
+                <Sidebar
+                    InternShip={t('cardType')}
+                    handleSidebar={handleSidebar}
+                    Job={t('cardType2')}
+                    Name={t('name')}
+                    talent={t('Hire Talent')}
+                    admin={t('admin')}
+                    register={t('registerButton')}
+                    student={t('student')}
+                    employer={t('employer')}
+                    logout={t('logout')}
+                    more={t('more')}
+                    resume={t('resume')}
+                    Applications={t('applications')}
+                    Contact={t('contact')}
+                    changeLanguage={changeLanguage}
+                    lang={i18n.language}
+                />
+            )}
+
+
         </div>
     )
 }

@@ -58,7 +58,6 @@ function JobAvl() {
 
 
   return (
-    <>
       <div className='flex flex-col sm:flex-row w-full'>
         <div className="w-full mb-14 flex flex-col items-center">
           <div className=" w-fit p-4 mt-3 rounded-lg shadow-lg">
@@ -100,17 +99,17 @@ function JobAvl() {
 
           {filterJob.map((data, index) => (
 
-            <div className='shadow-lg rounded-lg bg-white m-7 '>
+            <div className='shadow-lg rounded-lg m-7 border-2 border-slate-400'>
               <div className="m-4">
 
-                <div className="flex justify-between">
-                  <p className='mb-4 mt-3' id='boxer'> <i className='bi bi-arrow-up-right text-blue-500' ></i>{t("iCardTitle")}</p>
-                  <img src={compLogo} className='w-14' alt="" />
-                </div>
+              <div className="flex justify-between">
+                <p className='p-1 rounded-lg border-2 border-sky-400  flex gap-2 my-auto' > <i className='bi bi-arrow-up-right text-blue-500' ></i>{t("iCardTitle")}</p>
+                <img src={compLogo} className='w-14' alt="" />
+              </div>
                 <div className="">
                   <div className='flex flex-col items-start gap-3 m-2' >
                     <p className='text-lg text-black mt-7 font-bold'>{data.title}</p>
-                    <p className='text-sm text-slate-300 font-bold'>{data.company}</p>
+                    <p className='text-sm text-slate-500 font-bold'>{data.company}</p>
                     <p className=' mt-2'>{data.location}</p>
                   </div>
                   <div className="flex text-sm justify-between m-2">
@@ -142,9 +141,7 @@ function JobAvl() {
           }
 
         </div>
-      </div>
-
-    </>
+      </div>  
   )
 }
 

@@ -35,11 +35,11 @@ function Job({popular1,list1,list2,list3,list4,list5,list6,list7,list8,iCardTitl
         !selectedCategory || item.category === selectedCategory
     )
     return (
-        <div>
+        <div className='bg-inherit'>
 
-            <div className="info-intern mt-12">
+            <div className=" mt-12">
 
-                <div className="categories flex flex-wrap mt-14 border-2 mx-5 p-3 rounded-xl shadow-lg">
+                <div className=" flex flex-wrap mt-14 border-2 mx-5 p-3 rounded-xl shadow-lg">
                 <p className='font-bold w-full text-left ml-6 text-xl mb-3'>{popular1}</p>
                         <span className={`category mr-4 ml-6 ${selectedCategory === 'Big Brands' ? 'bg-blue-500 text-white' : ""}`} onClick={() => setSelectedCategory('Big Brands')}>{list1}</span>
                         <span className={`category mr-4 ml-6 ${selectedCategory === "Work From Home" ? 'bg-blue-500 text-white':""}`} onClick={() => setSelectedCategory("Work From Home")}>{list2}</span>
@@ -51,12 +51,12 @@ function Job({popular1,list1,list2,list3,list4,list5,list6,list7,list8,iCardTitl
                         <span className={`category mr-4 ml-6 ${selectedCategory === "Data Science" ? 'bg-blue-500 text-white' :""}`} onClick={() => setSelectedCategory("Data Science")}>{list8}</span>
                 </div>
             </div>
-            <div className="internships h-[340px]" id='container3'>
+            <div className="internships h-[400px]" id='container3'>
                     <div className="internShip-Info flex">
                         {
                             filterInternShips.map((data, index) => (
 
-                                <div className="m-5 p-3 w-[500px] h-[320px] border-2 border-slate-300 rounded-xl" key={index}>
+                                <div className="m-5 p-3 w-[500px] h-[350px] border-2 border-slate-500 rounded-xl" key={index}>
                                     <div className='m-auto flex flex-col'>
                                         <p className='my-3 p-2 rounded-md flex gap-3 border-2'> <i className='bi bi-arrow-up-right text-blue-500' ></i>{iCardTitle}</p>
                                         <p>{data.title}</p>

@@ -33,8 +33,6 @@ const Register = () => {
       const uid = user.uid
       navigate("/")
 
-
-
       axios.post('http://localhost:5000/api/history', {
         browser: browser,
         os: os,
@@ -53,14 +51,14 @@ const Register = () => {
   return (
     <div className="sm:w-3/4 m-auto">
       <div className="p-5">
-        <div className="flex bg-white rounded-lg justify-center overflow-hidden mx-auto">
-          <div className='flex flex-col p-3 gap-3 border-2 shadow-xl w-[400px] mx-auto my-5 rounded-xl'>
+        <div className="flex bg-inherit rounded-lg justify-center overflow-hidden mx-auto">
+          <div className='flex flex-col p-3 gap-3 border-2 border-black shadow-xl w-[400px] mx-auto my-5 rounded-xl'>
             {browser === 'Edge' || browser === 'IE' ? (
               <MSUser />
             ) : (
 
               <>
-                <div className='flex gap-2 shadow-xl p-3 rounded-lg max-w-fit h-16 m-auto' onClick={handleSingin}>
+                <div className='flex gap-2 shadow-xl p-3 rounded-lg max-w-fit h-16 m-auto flex-1' onClick={handleSingin}>
                   <FcGoogle className='h-12 w-12' />
                   <p className="cursor-pointer px-4 py-3 w-5/6 text-center text-md text-gray-600 font-bold">{t('signInText')}</p>
                 </div>

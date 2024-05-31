@@ -2,13 +2,9 @@
     margin: 0;
     padding: 0;
 }
-img{
-    width: 120px;
-}
+
 nav{
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px -2px black;
     overflow: hidden;
 }
 ul{
@@ -231,7 +227,6 @@ left: 22%;
   position: absolute;
   top: 20%;
   left: 70%;
-  background: white;
   z-index: 1;
 }
 .profile-dropdown-2{
