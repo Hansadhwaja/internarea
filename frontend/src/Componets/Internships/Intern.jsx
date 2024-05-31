@@ -119,10 +119,10 @@ function Intern() {
               <div className="">
                 <div className='flex flex-col items-start gap-3 m-2' >
                   <p className='text-lg text-black mt-7 font-bold'>{data.title}</p>
-                  <p className='text-sm text-slate-300 font-bold'>{data.company}</p>
+                  <p className='text-sm text-slate-700 font-bold'>{data.company}</p>
                   <p className=' mt-2'>{data.location}</p>
                 </div>
-                <div className="flex text-sm justify-between m-2">
+                <div className="flex text-sm justify-between m-2 gap-2">
                   <p className='mt-3'> <i class="bi bi-play-circle-fill"></i>{t("startDate")}<br />  {data.StartDate}</p>
 
 
@@ -135,7 +135,7 @@ function Intern() {
               <div className='flex flex-col w-fit'>
 
                 <p className='bg-slate-200 text-slate-400 rounded-lg text-center p-2 mb-2'>{t("cardType")}</p>
-                <p><i className="bi bi-stopwatch text-green-300 mx-2"></i>23/04/2024</p>
+                <p><i className="bi bi-stopwatch text-green-600 mx-2"></i>23/04/2024</p>
               </div>
 
               <div className="flex justify-end p-1">

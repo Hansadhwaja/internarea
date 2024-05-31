@@ -75,7 +75,7 @@ function InternDeatil() {
           <p className='m-2 border-2 border-sky-400 p-2 w-fit rounded-lg'> <i className='bi bi-arrow-up-right text-blue-500' ></i> {t('iCardTitle')}</p>
           <div className="flex flex-col gap-2 items-start m-2">
             <p className='text-xl font-bold mt-4'> {data.title}</p>
-            <p className='text-sm text-slate-500 font-bold'>{data.title}</p>
+            <p className='text-sm text-slate-500 font-bold'>{data.company}</p>
             <p> <i class="bi bi-geo-alt-fill"></i> {data.location}</p>
           </div>
           <div className="flex text-sm justify-between m-3">

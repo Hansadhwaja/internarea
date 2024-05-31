@@ -125,7 +125,7 @@ function JobAvl() {
                 <div className='flex flex-col w-fit'>
 
                   <p className='bg-slate-200 text-slate-400 rounded-lg text-center p-2 mb-2'>{t("Permanent")}</p>
-                  <p><i className="bi bi-stopwatch text-green-300 mx-2"></i>23/04/2024</p>
+                  <p><i className="bi bi-stopwatch text-green-600 mx-2"></i>23/04/2024</p>
                 </div>
 
                 <div className="flex justify-end p-1">
