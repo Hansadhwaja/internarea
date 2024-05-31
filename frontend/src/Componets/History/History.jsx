@@ -33,7 +33,7 @@ const History = () => {
       <div>
         {data.map((item,index) => (user.uid === item.uid) ? (
           <div className='w-fit flex flex-col gap-3 rounded-xl border-2 p-2 shadow-xl mt-5' key={index}>
-            <p>{t('UID')}: {item.uid}</p>
+            <p>{t('uid')}: {item.uid}</p>
             <p>{t('IP Address')}: {item.IPAddress}</p>
             <p>{t('Browser')}: {item.browser}</p>
             <p>{t('Operating System')}: {item.os}</p>
