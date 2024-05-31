@@ -241,7 +241,7 @@ function Navbar() {
                     <p className='text-left'>{t('phone')}:{user?.phoneNumber}</p>
                     <div className='flex gap-2'>
                         <Link to={'/history'} className='my-auto' onClick={() => setDivVisibleProfile(prev => !prev)}>
-                            <button className='p-2 border-2 bg-blue-500 text-white rounded-lg text-sm'>Login History</button>
+                            <button className='p-2 border-2 bg-blue-500 text-white rounded-lg text-sm'>{t('Login History')}</button>
                         </Link>
                         <div className='p-2 flex '>
                             <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 my-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
