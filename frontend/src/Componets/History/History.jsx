@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../Feature/Userslice'
 import axios from 'axios';
@@ -10,6 +10,7 @@ const History = () => {
   const { t } = useTranslation();
   const user = useSelector(selectUser);
   const [data, setData] = useState([])
+  
 
   useEffect(() => {
     axios.get(`https://internarea.onrender.com/api/history`, {
@@ -37,7 +38,7 @@ const History = () => {
             <p>{t('IP Address')}: {item.IPAddress}</p>
             <p>{t('Browser')}: {item.browser}</p>
             <p>{t('Operating System')}: {item.os}</p>
-            <p>{t('Loggedin At')}: {item.loginAt}</p>
+            <p>{t('Loggedin At')}: {new Date(item.loginAt).toLocaleString()}</p>
           </div>
 
         ) : (
