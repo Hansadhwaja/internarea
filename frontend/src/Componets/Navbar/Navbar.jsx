@@ -228,7 +228,7 @@ function Navbar() {
             }
 
             {isDivVisibleForProfile && (
-                <div className={`${i18n.language === 'en' || i18n.language === 'es' || i18n.language === 'pt' ? 'bg-white' : 'bg-inherit'} absolute top-20 md:top-32 right-10 md:right-20 z-10 border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit max-w-sm`}>
+                <div className={`${i18n.language === 'en' || i18n.language === 'es' || i18n.language === 'pt' ? 'bg-white' : 'bg-inherit'} absolute top-20 md:top-32  md:right-20 z-10 border-2 shadow-xl p-3 rounded-xl flex flex-col gap-2 h-fit max-w-sm`}>
                     <Link to={'/profile'} className='border-b-2 pb-3' onClick={() => setDivVisibleProfile(prev => !prev)}>
                         <img src={user?.photo || profileImage} alt="" className='w-16 h-16 rounded-full mx-auto p-2' />
                     </Link>
