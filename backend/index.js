@@ -14,6 +14,11 @@ app.use(bodyParser.json({ limit: "50mb" }))
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }))
 app.use(express.json())
 
+app.get('/',(req,res)=>{
+  const date = new Date().toLocaleString();
+  res.send(data);
+})
+
 app.post("/login", (req, res) => {
   const { email } = req.body;
 
