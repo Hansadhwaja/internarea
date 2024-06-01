@@ -19,7 +19,7 @@ const mongoose=require("mongoose")
   loginAt:{
     type:String,
 },
- },{timestamps:true,versionKey:false});
+ },{versionKey:false});
  
  module.exports=mongoose.model("History",historySchema)
 
