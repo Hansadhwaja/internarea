@@ -1,4 +1,5 @@
-const JobData = [{
+const JobData = [
+        {
                 title: "Job Title",
                 company: "ankitOrg Ltd.",
                 location: "India,Mumbai",

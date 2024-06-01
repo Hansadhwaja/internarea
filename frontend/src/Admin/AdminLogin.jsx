@@ -20,7 +20,7 @@ function AdminLogin() {
         username: username,
         password: password
       }
-      axios.post("https://internshipbackend-vwja.onrender.com/api/admin/adminLogin", bodyjson).then((res) => {
+      axios.post("https://internarea.onrender.com/api/admin/adminLogin", bodyjson).then((res) => {
         alert("success")
         navigate("/adminepanel")
       }).catch((err) => {

@@ -23,7 +23,7 @@ function JobDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`https://internshipbackend-vwja.onrender.com/api/job/${id}`)
+      const response = await axios.get(`https://internarea.onrender.com/api/job/${id}`)
 
       const { company, category } = response.data;
       setCompany(company)
@@ -53,7 +53,7 @@ function JobDetail() {
         Application: id
       }
 
-      await axios.post("https://internshipbackend-vwja.onrender.com/api/application", bodyJson).then((res) => {
+      await axios.post("https://internarea.onrender.com/api/application", bodyJson).then((res) => {
 
 
 

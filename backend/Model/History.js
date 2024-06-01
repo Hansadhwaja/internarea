@@ -15,7 +15,11 @@ const mongoose=require("mongoose")
   },
   uid:{
     type:String
-  }
+  },
+  loginAt:{
+    type:Date,
+    default:Date.now,
+},
  },{timestamps:true,versionKey:false});
  
  module.exports=mongoose.model("History",historySchema)

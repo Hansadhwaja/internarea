@@ -37,7 +37,7 @@ const History = () => {
             <p>{t('IP Address')}: {item.IPAddress}</p>
             <p>{t('Browser')}: {item.browser}</p>
             <p>{t('Operating System')}: {item.os}</p>
-            <p>{t('Loggedin At')}: {item.createdAt}</p>
+            <p>{t('Loggedin At')}: {item.loginAt}</p>
           </div>
 
         ) : (

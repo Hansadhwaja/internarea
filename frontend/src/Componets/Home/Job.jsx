@@ -11,7 +11,7 @@ function Job({popular1,list1,list2,list3,list4,list5,list6,list7,list8,iCardTitl
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://internshipbackend-vwja.onrender.com/api/job`)
+                const response = await axios.get(`https://internarea.onrender.com/api/job`)
                 setJobData(response.data)
             } catch (error) {
                 console.log(error)
