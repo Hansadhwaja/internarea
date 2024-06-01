@@ -16,7 +16,7 @@ app.use(express.json())
 
 app.get('/',(req,res)=>{
   const date = new Date().toLocaleString();
-  res.send(data);
+  res.send(date);
 })
 
 app.post("/login", (req, res) => {
