@@ -100,13 +100,13 @@ function Navbar() {
                         </Link>
                     </div>
                     <div className="flex gap-1 md:gap-4 w-fit">
-                        <div className='sm:flex gap-2 items-center my-auto hidden text-[12px] md:text-md'>
+                        <div className='sm:flex gap-2 items-center my-auto hidden text-[12px] md:text-lg'>
                             <Link to={"/Internship"}>
                                 <p id='int' className='flex gap-3' >{t('cardType')}</p>
                             </Link>
                             <i onClick={handleInternShips} id='ico' className="bi bi-caret-down-fill"></i>
                         </div>
-                        <div className='hidden sm:flex gap-2 items-center my-auto text-[12px] md:text-md'>
+                        <div className='hidden sm:flex gap-2 items-center my-auto text-[12px] md:text-lg'>
                             <Link to={"/Jobs"}>
                                 <p className='flex gap-3'>{t('cardType2')}</p>
                             </Link>
@@ -145,10 +145,7 @@ function Navbar() {
 
                         ) : (
 
-                            <div className="flex">
-                                {/* <button className='border-2 border-sky-500 rounded-lg p-3 text-sky-500'><Link to="/login">Login</Link></button> */}
-
-
+                            <div className="flex my-auto h-fit">
                                 <button className='bg-sky-500 rounded-lg p-1 md:p-3 text-[12px] text-white my-auto'><Link to="/register">{t('registerButton')}</Link></button>
                             </div>
 
@@ -162,12 +159,12 @@ function Navbar() {
                                 <button className='bg-sky-500 rounded-lg text-white p-2 text-sm flex gap-2 m-auto' onClick={logoutFunction}>{t('logout')}<i className="bi bi-box-arrow-right"></i></button>
                             </div>
                         ) : (
-                            <div className='md:flex hidden text-[12px] my-auto text-center gap-2'>
-                                <div className="flex border-sky-500 border-2 rounded-lg p-1 text-[12px] text-sky-500 m-auto">
+                            <div className='md:flex hidden text-[12px] my-auto text-center gap-3 h-fit'>
+                                <div className="flex border-sky-500 border-2 rounded-lg w-fit text-[12px] text-sky-500 m-auto">
                                     <button className=''><Link to="/">{t('Hire Talent')}</Link></button>
                                 </div>
 
-                                <div className='bg-sky-500 rounded-lg my-auto p-2 text-white'>
+                                <div className='bg-sky-500 rounded-lg my-auto p-3 text-white'>
                                     <Link to={'/adminLogin'}>
                                         <button>{t('admin')}</button>
                                     </Link>

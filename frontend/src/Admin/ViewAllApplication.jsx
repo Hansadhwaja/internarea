@@ -29,9 +29,9 @@ function ViewAllApplication() {
 
   return (
     <div className='mt-5'>
-    <Link to={'/adminepanel'} className='p-2 bg-sky-500 text-white my-auto'>Back</Link>
+    <Link to={'/adminepanel'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
       <div className='hide'>
-        <h1 className='text-3xl font-semibold mt-3'>{t('Total Applications')}</h1>
+        <h1 className='text-3xl font-semibold mt-3 text-center'>{t('Total Applications')}</h1>
         <div className="flex justify-center " id='tabel'>
           <div className="applications flex flex-col mt-7">
             <div className="overflow-x-auto sm:-mx-6 lg:mx-8">
@@ -76,8 +76,7 @@ function ViewAllApplication() {
       </div>
 
       <div className='flex flex-col md:hidden'>
-      <Link to={'/adminepanel'} className='p-2 bg-sky-500 text-white my-auto'>Back</Link>
-        <h1 className='p-2'>{t('View All Applications')}</h1>
+        <h1 className='p-2 text-center'>{t('View All Applications')}</h1>
         {application.map((data) => (
           <section class="text-gray-600 body-font">
             <div class="container px-5 py-2 mx-auto flex flex-wrap">

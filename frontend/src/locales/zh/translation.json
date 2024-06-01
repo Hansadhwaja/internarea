@@ -171,5 +171,6 @@
   "IP Address":"IP地址",
   "Browser":"浏览器",
   "Operating System":"操作系统",
-  "Loggedin At":"登录时间"
+  "Loggedin At":"登录时间",
+  "Back":"后退"
 }
