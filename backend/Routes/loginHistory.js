@@ -5,7 +5,7 @@ const router = express.Router();
 router.post('/', async (req, res) => {
     const userInfo = req.body;
     const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress ;
-    const date = new Date().toLocaleString();
+    const date = new Date().toISOString()
     console.log(date);
 
     // Log or process the data as needed
