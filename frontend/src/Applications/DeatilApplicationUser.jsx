@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import profileImage from '../Assets/org.jpg'
+import { Link } from 'react-router-dom';
 
 
 function DeatilApplication() {
@@ -23,6 +24,7 @@ function DeatilApplication() {
 
   return (
     <div>
+     <Link to={'/userapplication'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
       {
         data.map((data) => (
           <section class="text-gray-600  overflow-hidden">
