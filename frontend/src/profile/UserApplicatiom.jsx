@@ -12,12 +12,13 @@ function UserApplication() {
   const { t} = useTranslation();
   const [application, setApplication] = useState([])
   const user = useSelector(selectUser)
-  const userapplication = application.filter(app => app.user?.name === user.name)
+  const userapplication = application.filter(app => app.user?.uid === user.uid)
 
   useEffect(() => {
     const fetchApplication = async () => {
       try {
         const response = await axios.get("https://internarea.onrender.com/api/application")
+
         setApplication(response.data)
 
       } catch (error) {
