@@ -17,7 +17,7 @@ const mongoose=require("mongoose")
     type:String
   },
   loginAt:{
-    type:Date,
+    type:String,
 },
  },{timestamps:true,versionKey:false});
  
