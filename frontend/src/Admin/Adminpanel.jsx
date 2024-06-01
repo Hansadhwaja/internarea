@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 function Adminpanel() {
   const { t } = useTranslation();
   return (
-      <div class="w-full overflow-hidden rounded-lg border bg-gray-50 shadow-sm block">
+      <div class="w-full overflow-hidden rounded-lg border bg-inherit shadow-sm block">
         <div class="mx-auto flex max-w-screen-lg items-center gap-8 p-8">
           <div class="grid w-2/3 grid-cols-2 gap-8">
             <div>

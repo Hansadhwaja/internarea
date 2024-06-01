@@ -29,8 +29,8 @@ function ViewAllApplication() {
 
   return (
     <div className='mt-5'>
+    <Link to={'/adminepanel'} className='p-2 bg-sky-500 text-white my-auto'>Back</Link>
       <div className='hide'>
-
         <h1 className='text-3xl font-semibold mt-3'>{t('Total Applications')}</h1>
         <div className="flex justify-center " id='tabel'>
           <div className="applications flex flex-col mt-7">
@@ -75,7 +75,8 @@ function ViewAllApplication() {
 
       </div>
 
-      <div className=''>
+      <div className='flex flex-col md:hidden'>
+      <Link to={'/adminepanel'} className='p-2 bg-sky-500 text-white my-auto'>Back</Link>
         <h1 className='p-2'>{t('View All Applications')}</h1>
         {application.map((data) => (
           <section class="text-gray-600 body-font">
@@ -93,7 +94,7 @@ function ViewAllApplication() {
                       <p class="leading-relaxed text-base"> {t('Applied By')} {data.user.name}</p>
                       <p class="leading-relaxed text-base"> {t('Applied On')}{new Date(data?.createAt).toLocaleDateString()}</p>
                       <p class="leading-relaxed text-base">{t('Application Status')} {data.status}</p>
-                      <Link to={`/detailApplication?a=${data._id}`} class="mt-3 text-indigo-500 inline-flex items-center">{t('viewButton"')}
+                      <Link to={`/detailApplication?a=${data._id}`} class="mt-3 text-indigo-500 inline-flex items-center">{t('viewButton')}
                         <i class="bi bi-chevron-compact-right text-blue-500" ></i>
                       </Link>
                     </div>
