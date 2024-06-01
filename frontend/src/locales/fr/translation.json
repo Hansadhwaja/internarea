@@ -172,5 +172,6 @@
   "Browser":"Navigateur",
   "Operating System":"Système opérateur",
   "Loggedin At":"Heure de connexion",
-  "Back":"Dos"
+  "Back":"Dos",
+  "Status":"Statut"
 }

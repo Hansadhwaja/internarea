@@ -172,6 +172,7 @@
   "Browser":"Navegador",
   "Operating System":"Sistema operacional",
   "Loggedin At":"Hora de login",
-  "Back":"Voltar"
+  "Back":"Voltar",
+  "Status":"Status"
 
 }

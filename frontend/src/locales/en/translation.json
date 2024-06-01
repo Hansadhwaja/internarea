@@ -172,5 +172,6 @@
   "Browser":"Browser",
   "Operating System":"Operating System",
   "Loggedin At":"Loggedin Time",
-  "Back":"Back"
+  "Back":"Back",
+  "Status":"Status"
 }

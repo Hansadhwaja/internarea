@@ -172,5 +172,6 @@
   "Browser":"Navegador",
   "Operating System":"Sistema operativo",
   "Loggedin At":"Hora de inicio de sesión",
-  "Back":"Atrás"
+  "Back":"Atrás",
+  "Status":"Estado"
 }

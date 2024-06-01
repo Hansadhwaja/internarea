@@ -54,6 +54,9 @@ function DeatilApplication() {
                   <h4 className=' mt-9'>{t('Applied By')}</h4>
                   <p className='font-bold'>{data.user.name}</p>
 
+                  <h4 className=' mt-9'>{t('Status')}</h4>
+                  <p className='font-bold'>{data.status}</p>
+
                 </div>
 
               </div>
