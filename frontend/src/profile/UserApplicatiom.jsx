@@ -32,7 +32,10 @@ function UserApplication() {
 
   return (
     <div>
-     <Link to={'/profile'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
+    <div className='m-3'>
+    <Link to={'/'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
+    </div>
+     
       <div className='hidden md:flex flex-col'>
 
         <h1 className='text-3xl font-semibold mt-3 text-center'>{t('Total Applications')}</h1>

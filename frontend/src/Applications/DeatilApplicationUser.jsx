@@ -24,7 +24,10 @@ function DeatilApplication() {
 
   return (
     <div>
-     <Link to={'/userapplication'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
+    <div className='m-3'>
+    <Link to={'/userapplication'} className='p-2 bg-sky-500 text-white my-auto rounded-lg'>{t('Back')}</Link>
+    </div>
+    
       {
         data.map((data) => (
           <section class="text-gray-600  overflow-hidden">
@@ -37,7 +40,7 @@ function DeatilApplication() {
                     <p class="text-gray-900 font-bold ">{data.company}</p>
                   </div>
                   <div>
-                    <h2>{t('Cover Letter')}</h2>
+                    <h2>{t('Cover letter')}</h2>
                     <p class="font-bold">{data.coverLetter}</p>
                   </div>
 
