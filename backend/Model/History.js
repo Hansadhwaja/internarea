@@ -18,7 +18,6 @@ const mongoose=require("mongoose")
   },
   loginAt:{
     type:Date,
-    default:new Date(),
 },
  },{timestamps:true,versionKey:false});
  
